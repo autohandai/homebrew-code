@@ -1,26 +1,26 @@
 class AutohandCode < Formula
   desc "Autonomous LLM-powered coding agent CLI"
   homepage "https://autohand.ai"
-  version "0.8.2"
+  version "0.8.3"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/autohandai/code-cli/releases/download/v0.8.2/autohand-macos-arm64.tar.gz"
-      sha256 "3bd5bfd9584852cceab42246f386af0a8a049cf78240bf9e7ee95add45718171"
+      url "https://github.com/autohandai/code-cli/releases/download/v0.8.3/autohand-macos-arm64.tar.gz"
+      sha256 "4dbe6ebadb27c73e6c1482561c8a070f5011624b9e582a23dc8f2ccc7ad40107"
     else
-      url "https://github.com/autohandai/code-cli/releases/download/v0.8.2/autohand-macos-x64.tar.gz"
-      sha256 "98a609dab064b06a1c5c77ea167f07772ae60448d044dcc7a9aa2808e79b72ba"
+      url "https://github.com/autohandai/code-cli/releases/download/v0.8.3/autohand-macos-x64.tar.gz"
+      sha256 "6d75260fbe6fb02583802dc0e2fe5980cdc43bc0b044a9ea2de51e8e76f43275"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/autohandai/code-cli/releases/download/v0.8.2/autohand-linux-arm64.tar.gz"
-      sha256 "af19e52edffe2fd6946c766bffba458bbdab22999b7d43e983aac33830beced7"
+      url "https://github.com/autohandai/code-cli/releases/download/v0.8.3/autohand-linux-arm64.tar.gz"
+      sha256 "4e5b887a849dc65bd3f18557bdc3e0caa56251f6606b2783a1ec9db444a741cb"
     else
-      url "https://github.com/autohandai/code-cli/releases/download/v0.8.2/autohand-linux-x64.tar.gz"
-      sha256 "f40000633a86f4a52a5c58297e03b8e4b62385d0271dda2f27785281ea3da690"
+      url "https://github.com/autohandai/code-cli/releases/download/v0.8.3/autohand-linux-x64.tar.gz"
+      sha256 "edde90a38e6103cff78f71a46650c3eda86522b4b482d4315572476a6d3b1f4f"
     end
   end
 
