@@ -25,10 +25,11 @@ class AutohandCode < Formula
   end
 
   def install
-    bin.install "autohand" => "autohand-code"
+    bin.install "autohand"
+    bin.install_symlink "autohand" => "autohand-code"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/autohand-code --version")
+    assert_match version.to_s, shell_output("#{bin}/autohand --version")
   end
 end
