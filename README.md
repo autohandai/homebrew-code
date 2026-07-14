@@ -3,15 +3,21 @@
 ## Install
 
 ```bash
-brew tap autohandai/code
-brew install autohand-code
+brew install autohandai/code/autohand-code
 ```
+
+The fully qualified command trusts only this formula, as required by Homebrew 6. Start Autohand with:
+
+```bash
+autohand
+```
+
+The previous `autohand-code` command remains available as a compatibility alias.
 
 ## Update
 
 ```bash
-brew update
-brew upgrade autohand-code
+brew upgrade autohandai/code/autohand-code
 ```
 
 ## Uninstall
