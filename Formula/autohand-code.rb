@@ -1,33 +1,35 @@
 class AutohandCode < Formula
   desc "Autonomous LLM-powered coding agent CLI"
   homepage "https://autohand.ai"
-  version "0.9.7"
+  version "0.9.8"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/autohandai/code-cli/releases/download/v0.9.7/autohand-macos-arm64.tar.gz"
-      sha256 "1edcaf64966fa375309e547383d0a197c0064743108803edbf722f670a40a003"
+      url "https://github.com/autohandai/code-cli/releases/download/v0.9.8/autohand-macos-arm64.tar.gz"
+      sha256 "c1511411dda0e1d23c33142e483fb243d3cb59dfe8ab0f9da219ab854a7920b7"
     else
-      url "https://github.com/autohandai/code-cli/releases/download/v0.9.7/autohand-macos-x64.tar.gz"
-      sha256 "956f6778517ba7cf183366ef47e99b070f9674927fcbaf3262148b1e6008431f"
+      url "https://github.com/autohandai/code-cli/releases/download/v0.9.8/autohand-macos-x64.tar.gz"
+      sha256 "69ca6fad6bfa0a5e21db32ce4bd10ddacbc5b3c32d3345da33a6b1b4c36c8efa"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/autohandai/code-cli/releases/download/v0.9.7/autohand-linux-arm64.tar.gz"
-      sha256 "5b9c990fc2efe8da5514cca6a74b02c51f10e95e860006109969011354158099"
+      url "https://github.com/autohandai/code-cli/releases/download/v0.9.8/autohand-linux-arm64.tar.gz"
+      sha256 "7f0d4069dd6f20e3c7dc0431ffc53d97d4750eeb618a6ec0d18c4281c26f4bfe"
     else
-      url "https://github.com/autohandai/code-cli/releases/download/v0.9.7/autohand-linux-x64.tar.gz"
-      sha256 "78393bf943413fe39bb8fe5433a0159968dc3c772dff82ffea340dc3e803ffbc"
+      url "https://github.com/autohandai/code-cli/releases/download/v0.9.8/autohand-linux-x64.tar.gz"
+      sha256 "753ef5bd44953f1b1958b8d54aed4728ceb3318fb4de19ce9e3035b49252168d"
     end
   end
 
   def install
     bin.install "autohand"
+    bin.install "ahtraces"
     bin.install_symlink "autohand" => "autohand-code"
     bin.install_symlink "autohand" => "agent"
+    bin.install_symlink "autohand" => "ah"
   end
 
   def post_install
@@ -55,5 +57,6 @@ class AutohandCode < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/autohand --version")
+    assert_match version.to_s, shell_output("#{bin}/ahtraces --version")
   end
 end
